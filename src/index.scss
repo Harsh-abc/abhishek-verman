@@ -1,0 +1,84 @@
+// @import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// #################################
+// PAGE TRANSITION
+// #################################
+.pageTransition-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  // background: var(--backgroundcolor2);
+  z-index: 9999;
+  pointer-events: none;
+
+  .background-banner {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // background-color: #fff;
+    background: url("/background-banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    // opacity: 0;
+    // background-position: center;
+  }
+  .text-container {
+    h1 {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      font-size: 125px;
+      text-wrap: nowrap;
+      font-weight: 900;
+      color: #da9e63;
+      // color: #fff;
+      //opacity: 0;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+    }
+
+    span {
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      font-size: 55px;
+      color: #da9e63;
+    }
+  }
+
+  .home-container {
+    position: absolute;
+    bottom: -20%;
+    left: -20%;
+    z-index: 11111;
+    opacity: 0;
+
+    .home-content {
+      h1 {
+        font-size: 45px;
+        color: #fff;
+        text-transform: uppercase;
+      }
+      span {
+        font-size: 14px;
+        color: #fff;
+      }
+    }
+  }
+}
