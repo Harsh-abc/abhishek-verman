@@ -5,14 +5,41 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+// @font-face {
+//   font-family: mnt;
+//   src: url("/fonts/monton.ttf");
+// }
+
 body {
-  background-color: #000;
+  background-color: #fff;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+// ################################
+// NAVBAR
+// ###############################
+.nav-container {
+  position: absolute;
+  z-index: 11111;
+  color: white;
+  // opacity: 0;
+  .nav-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
 // #################################
-// PAGE TRANSITION
+// PAGE TRANSITION                 #
 // #################################
 .pageTransition-container {
   position: fixed;
@@ -61,24 +88,257 @@ body {
       color: #da9e63;
     }
   }
+}
 
-  .home-container {
+.home-container {
+  .home-overlay {
+    content: "";
     position: absolute;
-    bottom: -20%;
-    left: -20%;
-    z-index: 11111;
-    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.5;
+  }
 
+  video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  .home-content-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 90vh;
+    padding: 80px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    // border: 1px solid #da9e63;
     .home-content {
+      // margin-top: 150px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       h1 {
-        font-size: 45px;
-        color: #fff;
+        font-size: 105px;
         text-transform: uppercase;
+        text-wrap: nowrap;
+        color: #da9e63;
       }
       span {
-        font-size: 14px;
+        font-size: 24px;
         color: #fff;
+        text-align: center;
       }
     }
+
+    .home-info {
+      position: absolute;
+      bottom: 10%;
+      left: 10%;
+
+      span {
+        font-size: 24px;
+        color: #da9e63;
+      }
+    }
+  }
+}
+// #########################
+// MOODBOARD
+// #########################
+
+#moodboard {
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 80px;
+  }
+}
+// #########################
+// style
+// #########################
+
+#style {
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 80px;
+  }
+}
+// #########################
+// ABOUT
+// #########################
+
+#about {
+  height: 100vh;
+  .about {
+    width: 100%;
+    height: 100vh;
+    background: url("./assets/about2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .about-content {
+      p {
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        // margin-top: 50%;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 80px;
+    color: #fff;
+  }
+}
+
+// #########################
+// frames
+// #########################
+
+#frames {
+  height: 50vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 80px;
+  }
+}
+
+// #########################
+// collaborate
+// #########################
+
+#collaborate {
+  width: 100%;
+  height: 50vh;
+  background-color: #000;
+  padding: 60px;
+  h1 {
+    // text-align: center;
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+  }
+  .collaborate {
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    p {
+      font-size: 36px;
+      color: #da9e63;
+      font-family: "monton", sans-serif;
+      font-weight: 800;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      margin-top: 10px;
+      padding: 10px 60px;
+      border: 1px solid #da9e63;
+      background-color: transparent;
+      color: white;
+      font-size: 14px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+  }
+}
+
+// #########################
+// FOOTER
+// #########################
+#footer {
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
+  height: 50vh;
+  background-color: #000;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top: 1px solid white;
+  color: white;
+
+  .footer_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 80px;
+    .footer_wrapper {
+      width: 100%;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .footer_name {
+        h1 {
+          font-size: 75px;
+          color: #da9e63;
+          text-transform: uppercase;
+        }
+      }
+
+      .footer_links {
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          color: #da9e63;
+          font-family: "monton", sans-serif;
+          li {
+            margin-top: 10px;
+            list-style: none;
+            font-size: 18px;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    position: absolute;
+    font-family: "monton", sans-serif;
+    bottom: 0;
+    left: 50%;
+    font-size: 8px;
+    z-index: 11000;
+    color: rgb(92, 90, 90);
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
   }
 }
